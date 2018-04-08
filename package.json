@@ -1,6 +1,6 @@
 {
   "name": "2b-logger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple JS logger",
   "main": "src/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tberne/js-logger.git"
+    "url": "git+https://github.com/2bernes/js-logger.git"
   },
   "keywords": [
     "logger"
@@ -16,9 +16,9 @@
   "author": "Thiago Berne",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tberne/js-logger/issues"
+    "url": "https://github.com/2bernes/js-logger/issues"
   },
-  "homepage": "https://github.com/tberne/js-logger#readme",
+  "homepage": "https://github.com/2bernes/js-logger#readme",
   "dependencies": {
     "chalk": "^2.3.2",
     "lodash": "^4.17.5",
