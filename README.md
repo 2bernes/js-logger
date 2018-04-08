@@ -37,9 +37,9 @@ The default options are:
 
 ``` JSON
 	{
-		level: "info",
-		noColor: false,
-		timestampFormat: "YYYY-MM-DD @ HH:mm:ss:ms"
+		"level": "info",
+		"noColor": false,
+		"timestampFormat": "YYYY-MM-DD @ HH:mm:ss:ms"
 	}
 ```
 
