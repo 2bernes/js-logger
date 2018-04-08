@@ -1,4 +1,4 @@
-# js-logger
+# 2b-logger
 A simple to use [JS logger](https://github.com/2bernes/js-logger).
 
 ## Installation
@@ -127,3 +127,49 @@ In this case, the redered message **will not** have colors.
 #### `timestampFormat` (string, default: `YYYY-MM-DD @ HH:mm:ss:ms`)
 This is the timestamp format to be used when rendering messages.
 The accepted format can be seen [here](https://github.com/jonschlinkert/time-stamp).
+
+
+## API
+Once a logger has been created, the following methods are available in it:
+
+#### `logger.trace ( msg1, msg2, ... )`
+Logs the messsages using `trace` level.
+
+#### `logger.debug ( msg1, msg2, ... )`
+Logs the messsages using `debug` level.
+
+#### `logger.info ( msg1, msg2, ... )`
+Logs the messsages using `info` level.
+
+#### `logger.success ( msg1, msg2, ... )`
+Logs the messsages using `success` level.
+
+#### `logger.warn ( msg1, msg2, ... )`
+Logs the messsages using `warn` level.
+
+#### `logger.error ( msg1, msg2, ... )`
+Logs the messsages using `error` level.
+
+#### ℹ️ - About log parameters
+* The logger will ignore `null` parameters.
+* All other parameters will be converted to string, using `.toString ( )`.
+  * If, and only if, the result string is neither `null` nor `empty` it will be appended to the message, using a space character as separator.
+
+## Example output
+The following code:
+``` JS
+const logger = require ( "../src/index.js" ) ({
+	level: "trace"
+});
+
+logger.trace ( "trace", "msg" );
+logger.debug ( "debug", "msg" );
+logger.info ( "info", "msg" );
+logger.success ( "success", "msg" );
+logger.warn ( "warn", "msg" );
+logger.error ( "error", "msg" );
+```
+
+Will produce the following output:
+
+![sample output](https://raw.githubusercontent.com/2bernes/js-logger/master/readme/images/output.png)
