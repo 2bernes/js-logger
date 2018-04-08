@@ -54,11 +54,10 @@ The following table displays which messages will be logged, depending on the con
 
 <table style="border: 1px #000 solid">
 	<tr>
-		<th></th>
+		<td rowspan="2"></td>
 		<th colspan="6" style="text-align: center">Configured Level</th>
 	</tr>
 	<tr>
-		<th></th>
 		<th></th>
 		<th><code>trace</code></th>
 		<th><code>debug</code></th>
