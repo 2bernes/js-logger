@@ -1,6 +1,6 @@
 {
   "name": "2b-logger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple JS logger",
   "main": "src/index.js",
   "scripts": {
