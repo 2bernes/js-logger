@@ -1,11 +1,15 @@
 module.exports = initOptions => {
 	
+	// rear strip-ansi
+	const stripAnsi = require ( "strip-ansi" );
+
 	// read lodash
-	_ = require ( "lodash" );
+	const lodash = require ( "lodash" );
 
 	// read timestamp
-	timestamp = require ( "time-stamp" );
+	const timestamp = require ( "time-stamp" );
 
+	// make sure initOptions is neither null nor undefined
 	initOptions = initOptions || {};
 
 	const defaultOptions = {
@@ -14,9 +18,10 @@ module.exports = initOptions => {
 		timestampFormat: "YYYY-MM-DD @ HH:mm:ss:ms"
 	};
 
-	let options = _.merge ( defaultOptions, initOptions );
+	// our options will be a merge between default and init options
+	let options = lodash.merge ( defaultOptions, initOptions );
 
-	
+	// tiny utility to check if a given object is defined (not null and not undefined)
 	let isDef = obj => obj !== null && obj !== undefined;
 
 	// let's validate options...
@@ -119,8 +124,10 @@ module.exports = initOptions => {
 		throw `Invalid log level: ${ levelStr }. Expected one of: ${ Object.keys ( levelTable ).map ( highlight ).join(", ") }.`;
 	}
 
+	// returns whether the given logged level is accepted by current configured level
 	let accept = ( loggedLevel ) => loggedLevel.val >= level.val;
 
+	// returns the (formatted) timestamp
 	let ts = () => {
 		if ( noColor ) {
 			return "[" + timestamp ( timestampFormat ) + "]";
@@ -129,6 +136,7 @@ module.exports = initOptions => {
 		return "[" + chalk.white ( timestamp ( timestampFormat ) ) + "]";
 	}
 
+	// the log itself
 	let log = function ( arr ) {
 		var msgs = [];
 		for ( var i = 1; i < arr.length; i++ ) {
@@ -138,7 +146,12 @@ module.exports = initOptions => {
 				var strVal = argI.toString ( )
 
 				if ( isDef ( strVal ) && strVal.length > 0 ) {
-					msgs.push ( argI.toString ( ) );
+
+					if ( noColor ) {
+						strVal = stripAnsi ( strVal );
+					}
+
+					msgs.push ( strVal );
 				}
 			}
 		}
@@ -162,4 +175,4 @@ module.exports = initOptions => {
 		warn () { log ( [ "warn" ].concat ( Array.from ( arguments ) ) ) },
 		error () { log ( [ "error" ].concat ( Array.from ( arguments ) ) ) }
 	};
-}
+};
