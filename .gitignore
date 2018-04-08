@@ -1,0 +1,11 @@
+# do not version installed modules
+/node_modules
+
+# do not version dev npmrc
+/.npmrc
+
+# ignore tests for now
+/test
+
+# ignore vs code things for now
+/.vscode

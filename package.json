@@ -1,0 +1,28 @@
+{
+  "name": "js-logger",
+  "version": "0.0.1",
+  "description": "A simple JS logger",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tberne/js-logger.git"
+  },
+  "keywords": [
+    "logger"
+  ],
+  "author": "Thiago Berne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tberne/js-logger/issues"
+  },
+  "homepage": "https://github.com/tberne/js-logger#readme",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "lodash": "^4.17.5",
+    "log-symbols": "^2.2.0",
+    "time-stamp": "^2.0.0"
+  }
+}
