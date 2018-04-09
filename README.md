@@ -1,5 +1,7 @@
 # 2b-logger
-A simple to use [JS logger](https://github.com/2bernes/js-logger).
+A simple to use [JS logger](https://github.com/2bernes/js-logger). 
+
+![build status](https://travis-ci.org/2bernes/js-logger.svg?branch=master)
 
 ## Installation
 ```
