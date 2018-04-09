@@ -88,17 +88,17 @@ module.exports = initOptions => {
 		trace: {
 			val: 0,
 			out: process.stdout,
-			msg: noColor ? "» TRACE" : chalk.white ( "» TRACE" )
+			msg: noColor ? "» TRACE  " : chalk.white ( "» TRACE  " )
 		},
 		debug: {
 			val: 1,
 			out: process.stdout,
-			msg: noColor ? "» DEBUG" : chalk.white ( "» DEBUG" )
+			msg: noColor ? "» DEBUG  " : chalk.white ( "» DEBUG  " )
 		},
 		info: {
 			val: 2,
 			out: process.stdout,
-			msg: noColor ? logSymbols.info + " INFO" : chalk.blueBright ( logSymbols.info + " INFO" )
+			msg: noColor ? logSymbols.info + " INFO   " : chalk.blueBright ( logSymbols.info + " INFO   " )
 		},
 		success: {
 			val: 2,
@@ -113,7 +113,7 @@ module.exports = initOptions => {
 		error: {
 			val: 4,
 			out: process.stderr,
-			msg: noColor ? logSymbols.error + " ERROR" : chalk.redBright ( logSymbols.error + " ERROR" )
+			msg: noColor ? logSymbols.error + " ERROR  " : chalk.redBright ( logSymbols.error + " ERROR  " )
 		}
 	};
 
@@ -155,15 +155,15 @@ module.exports = initOptions => {
 				}
 			}
 		}
-
-		msgs.push ( "\n" );
+		
+		let levelObj = levelTable [ arr [ 0 ] ];
+		var renderedMsg = `[${ levelObj.msg }] ${ ts ( ) } - ${ msgs.join ( " " ) }\n`;
 
 		// TODO: support log in files
 
-		let levelObj = levelTable [ arr [ 0 ] ];
 
 		if ( accept ( levelObj ) ) {
-			levelObj.out.write ( `[${ levelObj.msg }] ${ ts ( ) } - ${ msgs.join ( " " ) }` );
+			levelObj.out.write ( renderedMsg );
 		}
 	}
 
