@@ -1,4 +1,4 @@
-# 2b-logger
+# 2b-logger --- ⛔ Discontinued ⛔
 A simple to use [JS logger](https://github.com/2bernes/js-logger). 
 
 ![build status](https://travis-ci.org/2bernes/js-logger.svg?branch=master)
